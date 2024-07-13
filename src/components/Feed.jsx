@@ -1,5 +1,5 @@
 import {collection, getDocs, getFirestore, orderBy, query} from 'firebase/firestore';
-import { app } from '@/firebase';
+import { app } from '../firebase';
 import Post from './Post';
 
 export default async function Feed() {
@@ -12,9 +12,9 @@ export default async function Feed() {
     });
   return (
     <div>
-        {data.map((post) => {
+        {data.map((post) => (
             <Post key={post.id} post={post} id={post.id}/>
-        })}
+        ))}
         
     </div>
   )
